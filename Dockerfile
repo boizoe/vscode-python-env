@@ -13,6 +13,8 @@ RUN groupadd --gid ${USER_GID} ${USERNAME} \
 
 USER ${USERNAME}
 
-RUN /usr/local/bin/python3 -m pip --no-cache-dir install --user -U pylint
+RUN /usr/local/bin/python3 -m pip --no-cache-dir install --user --upgrade \
+  pylint \
+  requests
 
 EXPOSE 5000
